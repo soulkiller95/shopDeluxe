@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shop Deluxe - Your Premium Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-store"></i> E-Shop Deluxe
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home-section" class="nav-link active" id="home-link">Home</a></li>
+                    <li><a href="#sell-section" class="nav-link" id="sell-link">Sell</a></li>
+                    <li><a href="#products-section" class="nav-link">Shop</a></li>
+                    <li><a href="#" class="nav-link" id="cart-toggle">
+                        <i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)
+                    </a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section" id="home-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Discover Your Next Favorite Item!</h1>
+                    <p>Explore our curated collection of high-quality products, designed for you.</p>
+                    <a href="#products-section" class="btn btn-primary">Shop Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Section -->
+        <section id="products-section" class="products-section container">
+            <h2 class="section-title">Our Latest Products</h2>
+            <div class="filters">
+                <input type="text" id="search-input" placeholder="Search products..." aria-label="Search products">
+                <select id="category-filter" aria-label="Filter by category">
+                    <option value="all">All Categories</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="apparel">Apparel</option>
+                    <option value="home">Home Goods</option>
+                    <option value="books">Books</option>
+                </select>
+            </div>
+            <div class="product-grid" id="product-grid">
+                <!-- Product cards will be dynamically inserted here -->
+            </div>
+        </section>
+        <!-- Sell Section -->
+        <section id="sell-section" class="sell-section container">
+            <h2 class="section-title">Sell Your Product</h2>
+            <form id="sell-form" class="sell-form">
+                <div class="form-group">
+                    <label for="product-name">Product Name</label>
+                    <input type="text" id="product-name" required placeholder="Enter product name">
+                </div>
+                <div class="form-group">
+                     <label for="product-category">Select Category</label>
+                     <select id="product-category">
+                     <option value="">Choose existing category</option>
+                     <option value="electronics">Electronics</option>
+                     <option value="apparel">Apparel</option>
+                     <option value="home">Home Goods</option>
+                     <option value="books">Books</option>
+                     </select>
+                </div>
+                <div class="form-group">
+                     <label for="custom-category">Or Add New Category</label>
+                     <input type="text" id="custom-category" placeholder="Enter custom category">
+                </div>
+
+                <div class="form-group">
+                    <label for="product-price">Price ($)</label>
+                    <input type="number" id="product-price" required min="0" step="0.01" placeholder="Enter price">
+                </div>
+                <div class="form-group">
+                    <label for="product-image">Image URL</label>
+                    <input type="url" id="product-image" required placeholder="Enter image URL">
+                </div>
+                <div class="form-group">
+                    <label for="product-description">Description</label>
+                    <textarea id="product-description" rows="4" required placeholder="Enter product description"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Product <i class="fas fa-plus"></i></button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Shopping Cart</h3>
+            <button class="close-cart-btn" id="close-cart-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-cart-message">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <button class="btn btn-primary checkout-btn" disabled>Proceed to Checkout <i class="fas fa-credit-card"></i></button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-col">
+                <h4>About Us</h4>
+                <p>E-Shop Deluxe provides the best online shopping experience with quality products and excellent customer service.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61558554901300" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/AcharyaSum95" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/sumedh_acharya18/#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 E-Shop Deluxe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
